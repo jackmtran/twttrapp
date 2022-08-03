@@ -18,7 +18,7 @@ def tweets():
     tweets = Tweet.query.order_by(Tweet.id.desc()).all()
     return {'tweets': [tweet.to_dict() for tweet in tweets]}
 
-@tweet_routes.route('/create', methods=['tweet'])
+@tweet_routes.route('/create', methods=['POST'])
 @login_required
 def post_tweet():
     form = TweetsForm()

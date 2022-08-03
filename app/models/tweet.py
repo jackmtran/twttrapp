@@ -9,8 +9,8 @@ class Tweet(db.Model):
     content = db.Column(db.String(144), nullable=False)
     imageURL = db.Column(db.String(255))
     userId = db.Column(db.Integer,db.ForeignKey("users.id"), nullable=False)
-    likes = db.Column(db.Integer)
-    retweets = db.Column(db.Integer)
+    likes = db.Column(db.Integer, default=0)
+    retweets = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.datetime.now())
 
 
