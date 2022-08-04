@@ -25,7 +25,7 @@ div{
     list-style-type:none;
     margin-left:5%;
     padding:0;
-    width: 200px;
+    width: 100px;
     background-color:black;
 }
 
@@ -48,12 +48,15 @@ div{
 }
 
 nav{
-    width:300px;
+    width:100px;
     /* display:contents */
+    float:left;
+    /* background-color:black; */
 }
 
 .homebutt{
     color:white;
-    top:10px;
+    top:3px;
+    position:relative;
 
 }

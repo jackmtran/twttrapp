@@ -1,9 +1,30 @@
 .tweet-form{
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     display: block;
-    width:180px;;
+    width:250px;;
     height: auto;
     margin: auto;
     border-radius: 10px;
     text-align: center;
+}
+
+textarea{
+    border:none;
+    outline:none;
+    background-color:black;
+    resize:none;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    color:white;
+    padding-top:20px;
+}
+
+input{
+    background-color:rgba(95, 91, 91, 0.567);
+    padding:6px;
+    border-radius:10px;
+    margin-bottom:10px;
+    font-size:10px;
+    margin-right:10px;
+    color:white
 }

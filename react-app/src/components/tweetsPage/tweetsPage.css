@@ -1,10 +1,60 @@
 .perTweet{
     padding-top:30px;
-    background-color: rgb(255, 255, 255);
+    margin-left:45%;
+    background-color:black;
     display: block;
-    width:200px;;
+    width: auto;
+    height: auto;
+
+    border-radius: 10px;
+    text-align: center;
+    justify-content:center;
+    align-items:center
+}
+
+.timeline{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    width:500px;;
+}
+.profpic{
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    position:relative;
+    z-index:10;
+
+}
+
+.name{
+    text-decoration:none;
+    font-size:14px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    position:relative;
+    top:-30px;
+    margin-left:10px;
+}
+
+
+.blackbar{
+    width:100px;
+    padding-left:55px;
+    font-size:12px;
+    justify-content: left;
+    align-items:left;
+    text-align:left;
+}
+
+.wholething{
+    display: block;
+    width:1100px;
     height: auto;
     margin: auto;
     border-radius: 10px;
     text-align: center;
+    justify-content:center;
+    align-items:center;
+
 }

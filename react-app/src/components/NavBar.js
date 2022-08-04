@@ -43,7 +43,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="underbird">
-          <LogoutButton />
+        <LogoutButton/>
         </li>
         </div>
     </nav>

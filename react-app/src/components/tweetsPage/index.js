@@ -52,15 +52,22 @@ function TweetsPage() {
 
     return (
         <>
+        <div className="wholething">
         <CreateTweetsPage />
         <div className="timeline">
             {sortedTweet.map((tweet)=>(
                 <div className="perTweet">
                           <div className="tweettopbar">
                               <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/>
-                              <NavLink className="name" to={`/users/${tweet.user.id}`}><b>{tweet.user.username}</b></NavLink>
+                              <NavLink className="name" to={`/users/${tweet.user.id}`}>
+                                <a>{tweet.user.username}
+                                <a className="content">
+                                <div className="blackbar">{tweet.content} <img src={tweet.imageUrl}/></div>
+                                </a>
+                                </a>
+                                </NavLink>
                           </div>
-                              <div className="alldem">{tweet.content}  <img src={tweet.imageUrl}/></div>
+
                               {tweet.user.id === user.id ? (
                                     <>
                               <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleEditClick}>Edit</button>
@@ -72,6 +79,7 @@ function TweetsPage() {
                 </div>
             )
             )}
+        </div>
         </div>
         </>
     )
