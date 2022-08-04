@@ -1,36 +1,51 @@
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import { FaTwitter } from "react-icons/fa"
+import { RiHome7Fill } from "react-icons/ri"
 
+import './NavBar.css'
 const NavBar = () => {
+
+  const history = useHistory();
+
+  const forHOME = (e) => {
+    e.preventDefault();
+    history.push('/tweets')
+  }
+
+
   return (
     <nav>
-      <ul>
+      <div>
         <li>
-          <NavLink to='/tweets' exact={true} activeClassName='active'>
-            Home
+        <FaTwitter onClick={forHOME} size="24px" className="birdy"/>
+        </li>
+        <li className="underbird">
+          <NavLink to='/tweets' exact={true} className='active'>
+          <RiHome7Fill size="18px"className="homebutt" /> Home
           </NavLink>
         </li>
-        <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
+        <li className="underbird">
+          <NavLink to='/login' exact={true} className='active'>
             Login
           </NavLink>
         </li>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
+        <li className="underbird">
+          <NavLink to='/sign-up' exact={true} className='active'>
             Sign Up
           </NavLink>
         </li>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
+        <li className="underbird">
+          <NavLink to='/users' exact={true} className='active'>
             Users
           </NavLink>
         </li>
-        <li>
+        <li className="underbird">
           <LogoutButton />
         </li>
-      </ul>
+        </div>
     </nav>
   );
 }

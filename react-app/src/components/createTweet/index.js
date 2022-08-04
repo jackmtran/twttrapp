@@ -29,7 +29,7 @@ function CreateTweetsPage() {
     if(content === '') {
       errorsObj.content = "Requires input!";
       error = true;
-    } else if (content.length < 5 || content.length > 20) {
+    } else if (content.length < 1 || content.length > 144) {
       errorsObj.content = "content must be longer than 5 characters and shorter than 20";
       error = true;
     }

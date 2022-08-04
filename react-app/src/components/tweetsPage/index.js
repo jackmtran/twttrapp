@@ -4,6 +4,8 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CreateTweetsPage from '../createTweet'
 import EditTweetsPage from '../editTweet'
+import CreateCommentsPage from '../createComment'
+
 import './tweetsPage.css'
 
 
@@ -41,7 +43,7 @@ function TweetsPage() {
     //   const handleEditClick = (e) => {
     //     e.preventDefault();
     //     const buttonData = Number(e.target.id);
-    //         history.push(`/posts/${buttonData}`)
+    //         history.push(`/tweets/${buttonData}`)
     //       }
     const handleEditClick= event => {
         setEditTweet(current => !current)
@@ -54,15 +56,19 @@ function TweetsPage() {
         <div className="timeline">
             {sortedTweet.map((tweet)=>(
                 <div className="perTweet">
-                              {/* <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/>
-                              <NavLink className="name" to={`/users/${tweet.user.id}`}><b>{tweet.user.username}</b></NavLink> */}
-                              <div className="alldem">{tweet.content}  <img src={tweet.imageUrl} alt={"Where Posts go"} /></div>
+                          <div className="tweettopbar">
+                              <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/>
+                              <NavLink className="name" to={`/users/${tweet.user.id}`}><b>{tweet.user.username}</b></NavLink>
+                          </div>
+                              <div className="alldem">{tweet.content}  <img src={tweet.imageUrl}/></div>
                               {tweet.user.id === user.id ? (
                                     <>
                               <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleEditClick}>Edit</button>
                               <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleDeleteClick}>Delete</button>
                               {editTweet && <EditTweetsPage tweetId={tweet.id}/> }
                                </> ) : null}
+
+
                 </div>
             )
             )}
