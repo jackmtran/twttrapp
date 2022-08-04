@@ -11,7 +11,7 @@ function CreateCommentsPage({value}) {
     const user = useSelector(state => state.session.user)
 
 
-    let errorsObj = {content: ''};
+    let errorsObj = {comment: ''};
     const [errors, setErrors] = useState(errorsObj);
     const [userId] = useState(user.id);
     const [comment, setComment] = useState("");
@@ -25,26 +25,26 @@ function CreateCommentsPage({value}) {
 
       const newComment = {
           userId,
-          postId:value,
-          content
+          tweetId:value,
+          comment
         };
 
 
       await dispatch(createCommentThunk(newComment));
-      history.push("/posts/");
+      history.push("/tweets/");
   };
 
     const handleCancelClick = (e) => {
       e.preventDefault();
-      history.push("/posts/");
+      history.push("/tweets/");
     };
 
 
 
     return (
       <form className="commentform" >
-        <input type="text"  className='inputfirst' placeholder="Content" value={content} onChange={updateContent}/>
-        {errors.content && <div>{errors.content}</div>}
+        <input type="text"  className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment}/>
+        {errors.comment && <div>{errors.comment}</div>}
         <button type="submit" className="createbutton" onClick={(e)=>handleSubmit(e)}>Comment</button>
       </form>
     );

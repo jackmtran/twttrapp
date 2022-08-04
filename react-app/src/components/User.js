@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getTweetsThunk } from "../store/tweets";
+import PopulateTweets from './populateTweets'
+
 
 function User() {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!userId) {
@@ -16,23 +21,26 @@ function User() {
     })();
   }, [userId]);
 
+  useEffect(() => {
+    dispatch(getTweetsThunk());
+  }, [dispatch]);
+
+
+
   if (!user) {
     return null;
   }
 
   return (
-    <ul>
-      <li>
-        <strong>User Id</strong> {userId}
-      </li>
-      <li>
-        <strong>Username</strong> {user.username}
-      </li>
-      <li>
-        <strong>Email</strong> {user.email}
-      </li>
-      
-    </ul>
-  );
+    <>
+  <div className="wrapper">
+    <div className="topstuff">
+     <img alt="profilepic" className="profilepicture" src={user.profpic}/>
+     <a className="profuser">{user.username}</a>
+    </div>
+    <div className="spacem"><PopulateTweets className="picwide" userId={user.id}></PopulateTweets></div>
+    </div>
+  </>
+);
 }
 export default User;

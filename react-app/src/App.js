@@ -11,6 +11,10 @@ import { authenticate } from './store/session';
 import TweetsPage from './components/tweetsPage';
 import CreateTweetsPage from './components/createTweet'
 import EditTweetsPage from './components/editTweet'
+import CreateCommentsPage from './components/createComment';
+import EditCommentsPage from './components/editComment';
+
+
 
 
 function App() {
@@ -40,6 +44,12 @@ function App() {
         </Route>
         <Route path='/tweets/:id' exact={true}>
           <EditTweetsPage />
+        </Route>
+        <Route path='/comments/create/:id'>
+          <CreateCommentsPage />
+        </Route>
+        <Route path='/comments/:id'>
+          <EditCommentsPage />
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />

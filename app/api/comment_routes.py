@@ -21,7 +21,7 @@ def post_comment():
     if form.validate_on_submit():
         comment = Comment(
             userId=form.data['userId'],
-            postId=form.data['postId'],
+            tweetId=form.data['tweetId'],
             content=form.data['content']
         )
         db.session.add(comment)
