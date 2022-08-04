@@ -9,6 +9,9 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import TweetsPage from './components/tweetsPage';
+import CreateTweetsPage from './components/createTweet'
+import EditTweetsPage from './components/editTweet'
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,8 +32,14 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+        <Route path='/tweets/create' exact={true}>
+          <CreateTweetsPage />
+        </Route>
         <Route path='/tweets' exact={true}>
           <TweetsPage />
+        </Route>
+        <Route path='/tweets/:id' exact={true}>
+          <EditTweetsPage />
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />

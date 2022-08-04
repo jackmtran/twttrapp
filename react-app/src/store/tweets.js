@@ -34,7 +34,7 @@ export const getTweetsThunk = () => async(dispatch) => {
 
 export const createTweetsThunk = (createdTweet) => async(dispatch) => {
     const response = await fetch('api/tweets/create', {
-        method:"TWEET",
+        method:"POST",
         headers: {
             "Content-Type" : "application/json",
         },

@@ -1,0 +1,10 @@
+.perTweet{
+    padding-top:30px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    width:200px;;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}

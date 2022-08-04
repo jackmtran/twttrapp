@@ -13,9 +13,9 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 @tweet_routes.route('/')
-@login_required
+# @login_required
 def tweets():
-    tweets = Tweet.query.order_by(Tweet.id.desc()).all()
+    tweets = Tweet.query.all()
     return {'tweets': [tweet.to_dict() for tweet in tweets]}
 
 @tweet_routes.route('/create', methods=['POST'])
