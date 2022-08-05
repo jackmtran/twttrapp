@@ -1,6 +1,8 @@
 /* TODO Add site wide styles */
 body{
-    background-color:black
+    background-color:black;
+    position:relative;
+    top:-19px;
 }
 
 button{
@@ -14,6 +16,7 @@ button{
     border-radius: 15px;
     padding:8px 15px 7px 15px;
     color:white;
+    cursor:pointer;
 }
 
 textarea{

@@ -1,5 +1,5 @@
 .birdy{
-    color:white;
+    color:rgba(231, 231, 231, 0.913);
     /* margin-left:5%; */
     padding:10px;
     margin-bottom:none;
@@ -18,12 +18,12 @@
 }
 
 .underbird{
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 div{
     list-style-type:none;
-    margin-left:5%;
+    margin-left:6%;
     padding:0;
     width: 100px;
     background-color:black;
@@ -56,7 +56,8 @@ nav{
 
 .homebutt{
     color:white;
-    top:3px;
+    top:5px;
     position:relative;
+    margin-right:4px;
 
 }

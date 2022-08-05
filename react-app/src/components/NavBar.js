@@ -20,14 +20,14 @@ const NavBar = () => {
     <nav>
       <div>
         <li>
-        <FaTwitter onClick={forHOME} size="24px" className="birdy"/>
+        <FaTwitter onClick={forHOME} size="23px" className="birdy"/>
         </li>
         <li className="underbird">
           <NavLink to='/tweets' exact={true} className='active'>
-          <RiHome7Fill size="18px"className="homebutt" /> Home
+          <RiHome7Fill size="22px"className="homebutt" /> Home
           </NavLink>
         </li>
-        <li className="underbird">
+        {/* <li className="underbird">
           <NavLink to='/login' exact={true} className='active'>
             Login
           </NavLink>
@@ -36,7 +36,7 @@ const NavBar = () => {
           <NavLink to='/sign-up' exact={true} className='active'>
             Sign Up
           </NavLink>
-        </li>
+        </li> */}
         <li className="underbird">
           <NavLink to='/users' exact={true} className='active'>
             Users
