@@ -1,11 +1,21 @@
 .tweet-form{
     background-color: black;
     display: block;
-    width:250px;;
+    width:400px;;
     height: auto;
     margin: auto;
-    border-radius: 10px;
+    padding-top:20px;
+    /* border-radius: 10px; */
     text-align: center;
+    border-bottom: 0.1px solid rgba(159, 159, 159, 0.565);
+    border-right: 0.1px solid rgba(159, 159, 159, 0.565);
+    border-left: 0.1px solid rgba(159, 159, 159, 0.565);
+    padding-right:40px;
+    padding-left:40px;
+    padding-bottom:5px;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
 }
 
 textarea{
@@ -17,6 +27,9 @@ textarea{
     font-size:18px;
     color:white;
     padding-top:20px;
+    position:relative;
+    bottom:20px;
+    left:5%
 }
 
 input{
@@ -26,5 +39,7 @@ input{
     margin-bottom:10px;
     font-size:10px;
     margin-right:10px;
-    color:white
+    color:white;
+    position:relative;
+    right:44%
 }

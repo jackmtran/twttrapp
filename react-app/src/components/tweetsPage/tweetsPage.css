@@ -1,7 +1,7 @@
 .perTweet{
     padding-top:30px;
     padding-left:275px;
-    margin-left:45%;
+    /* margin-left:40%; */
     background-color:black;
     display: block;
     width: auto;
@@ -41,9 +41,12 @@
 }
 
 
+/* express project starter ending has modals guide! */
+
+
 .blackbar{
     width:100px;
-    padding-left:55px;
+    padding-left:10px;
     font-size:12px;
     justify-content: left;
     align-items:left;

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import CreateTweetsPage from '../createTweet'
 import EditTweetsPage from '../editTweet'
 import CreateCommentsPage from '../createComment'
+import CreateCommentModal from '../createCommentModal'
 
 import './tweetsPage.css'
 
@@ -67,7 +68,7 @@ function TweetsPage() {
                                 </a>
                                 </NavLink>
                           </div>
-
+                          <div><CreateCommentModal /></div>
                               {tweet.user.id === user.id ? (
                                     <>
                               <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleEditClick}>Edit</button>

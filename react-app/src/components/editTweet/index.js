@@ -31,7 +31,7 @@ function EditTweetsPage({tweetId}) {
       };
 
       dispatch(updateTweetThunk(updatedTweet, tweetId));
-    history.push("/tweets/");
+    history.push("/tweets");
 
 };
 

@@ -1,13 +1,13 @@
 .logoutbutt{
     color:white;
-    margin-left:5%;
+    /* margin-left:5%; */
     padding:12px;
     cursor:pointer;
 }
 
 .logoutbutt:hover{
     color:white;
-    margin-left:5%;
+    /* margin-left:5%; */
     padding:12px;
     cursor:pointer;
 }

@@ -45,6 +45,7 @@ function CreateTweetsPage() {
           if(newTweet) {
           history.push('/tweets')
         }
+        setContent("")
       }
 
 }

@@ -4,8 +4,10 @@ import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { FaTwitter } from "react-icons/fa"
 import { RiHome7Fill } from "react-icons/ri"
-
+import { AiOutlineUser } from "react-icons/ai"
 import './NavBar.css'
+
+
 const NavBar = () => {
 
   const history = useHistory();
@@ -20,14 +22,14 @@ const NavBar = () => {
     <nav>
       <div>
         <li>
-        <FaTwitter onClick={forHOME} size="24px" className="birdy"/>
+        <FaTwitter onClick={forHOME} size="29px" className="birdy"/>
         </li>
         <li className="underbird">
           <NavLink to='/tweets' exact={true} className='active'>
-          <RiHome7Fill size="18px"className="homebutt" /> Home
+          <RiHome7Fill size="28px"className="homebutt" /><a>          Home</a>
           </NavLink>
         </li>
-        <li className="underbird">
+        {/* <li className="underbird">
           <NavLink to='/login' exact={true} className='active'>
             Login
           </NavLink>
@@ -36,10 +38,10 @@ const NavBar = () => {
           <NavLink to='/sign-up' exact={true} className='active'>
             Sign Up
           </NavLink>
-        </li>
+        </li> */}
         <li className="underbird">
           <NavLink to='/users' exact={true} className='active'>
-            Users
+          <AiOutlineUser size="28px"className="homebutt" /><a>            Profiles</a>
           </NavLink>
         </li>
         <li className="underbird">

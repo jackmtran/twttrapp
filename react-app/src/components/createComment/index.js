@@ -31,12 +31,12 @@ function CreateCommentsPage({value}) {
 
 
       await dispatch(createCommentThunk(newComment));
-      history.push("/tweets/");
+      history.push("/tweets");
   };
 
     const handleCancelClick = (e) => {
       e.preventDefault();
-      history.push("/tweets/");
+      history.push("/tweets");
     };
 
 
