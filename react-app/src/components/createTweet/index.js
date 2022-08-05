@@ -10,7 +10,7 @@ function CreateTweetsPage() {
 
   const user = useSelector(state => state.session.user)
 
-  let errorsObj = {comment: ''};
+  let errorsObj = {content: ''};
   const [errors, setErrors] = useState(errorsObj);
 
   const[userId] = useState(user.id);
