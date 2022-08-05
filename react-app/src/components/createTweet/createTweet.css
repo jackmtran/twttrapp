@@ -27,6 +27,9 @@ textarea{
     font-size:18px;
     color:white;
     padding-top:20px;
+    position:relative;
+    bottom:20px;
+    left:5%
 }
 
 input{
@@ -36,5 +39,7 @@ input{
     margin-bottom:10px;
     font-size:10px;
     margin-right:10px;
-    color:white
+    color:white;
+    position:relative;
+    right:44%
 }
