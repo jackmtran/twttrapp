@@ -27,14 +27,14 @@ const deleteComment = (comment) => ({
 
 
 export const thunkGetAllComments = () => async (dispatch) => {
-    const response = await fetch('/api/comments/')
+    const response = await fetch('/api/comments')
     const data = await response.json();
     dispatch(getAllComments(data.comments));
     return data
 }
 
 export const createCommentThunk = (newComment) => async(dispatch) => {
-    const response = await fetch(`/api/comments/create`, {
+    const response = await fetch(`/api/comments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

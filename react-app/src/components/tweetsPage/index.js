@@ -68,7 +68,7 @@ function TweetsPage() {
                                 </a>
                                 </NavLink>
                           </div>
-                          <div><CreateCommentModal /></div>
+                          <div><CreateCommentModal value={tweet.id} /></div>
                               {tweet.user.id === user.id ? (
                                     <>
                               <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleEditClick}>Edit</button>

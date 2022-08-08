@@ -15,7 +15,7 @@ function CreateCommentsPage({value}) {
     const [errors, setErrors] = useState(errorsObj);
     const [userId] = useState(user.id);
     const [comment, setComment] = useState("");
-
+console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",value)
     const updateComment = (e) => setComment(e.target.value);
 
     const handleSubmit = async (e) => {

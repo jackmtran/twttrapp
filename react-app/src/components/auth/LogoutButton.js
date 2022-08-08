@@ -11,9 +11,9 @@ const LogoutButton = () => {
   const history = useHistory()
   const onLogout = async (e) => {
     await dispatch(logout());
-    history.push('/')
-  };
 
+  };
+    history.push('/')
   return <HiOutlineLogout size="30px" className="logoutbutt" onClick={onLogout}/>
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import CreateCommentsPage from '../createComment';
 
-function CreateCommentModal() {
+function CreateCommentModal({value}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ function CreateCommentModal() {
       <button onClick={() => setShowModal(true)}>Create Comment</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CreateCommentsPage setShowModal={setShowModal}/>
+          <CreateCommentsPage value={value} setShowModal={setShowModal}/>
         </Modal>
       )}
     </>
