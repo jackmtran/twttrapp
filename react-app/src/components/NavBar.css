@@ -1,5 +1,5 @@
 .birdy{
-    color:rgba(231, 231, 231, 0.913);
+    color:rgba(242, 242, 242, 0.913);
     /* margin-left:5%; */
     padding:10px;
     margin-bottom:10px;;
@@ -21,7 +21,7 @@
     margin-bottom:28px;
 }
 
-div{
+.fix{
     list-style-type:none;
     margin-left:45px;
     padding:0;
@@ -51,14 +51,16 @@ div{
 
 nav{
     width:200px;
+    position:fixed;
     /* display:contents */
     float:left;
+    margin-left:3.4%;
     /* background-color:black; */
 }
 
 .homebutt{
     color:white;
-    top:5px;
+    top:7px;
     position:relative;
     margin-right:12px;
 

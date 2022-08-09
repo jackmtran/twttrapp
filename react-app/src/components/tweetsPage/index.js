@@ -4,8 +4,12 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CreateTweetsPage from '../createTweet'
 import EditTweetsPage from '../editTweet'
+import EditTweetModal from '../editTweetModal'
 import CreateCommentsPage from '../createComment'
 import CreateCommentModal from '../createCommentModal'
+
+import { FiEdit2 } from 'react-icons/fi'
+import { HiOutlineTrash } from 'react-icons/hi'
 
 import './tweetsPage.css'
 
@@ -54,27 +58,39 @@ function TweetsPage() {
     return (
         <>
         <div className="wholething">
+          <div className="sticky ">Home</div>
         <CreateTweetsPage />
         <div className="timeline">
             {sortedTweet.map((tweet)=>(
                 <div className="perTweet">
                           <div className="tweettopbar">
-                              <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/>
-                              <NavLink className="name" to={`/users/${tweet.user.id}`}>
-                                <a>{tweet.user.username}
-                                <a className="content">
-                                <div className="blackbar">{tweet.content} <img src={tweet.imageUrl}/></div>
-                                </a>
-                                </a>
-                                </NavLink>
+                            <div className="profile">
+                              <NavLink to={`/users/${tweet.user.id}`} ><img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/></NavLink>
+                            </div>
+                            <div className="tweetinside">
+                              <NavLink className="name" to={`/users/${tweet.user.id}`}>{tweet.user.username}</NavLink>
+                                {/* <div> */}
+                                  <div className="whitewords">
+                                    <a className="limit"> {tweet.content} <img src={tweet.imageUrl}/> </a>
+                                  </div>
+                                {/* </div> */}
+                              </div>
                           </div>
-                          <div><CreateCommentModal value={tweet.id} /></div>
                               {tweet.user.id === user.id ? (
                                     <>
-                              <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleEditClick}>Edit</button>
-                              <button type="button" className="tweetbuttons" id={tweet.id} onClick={handleDeleteClick}>Delete</button>
-                              {editTweet && <EditTweetsPage tweetId={tweet.id}/> }
-                               </> ) : null}
+                                    <div className="bottomicons">
+                              <CreateCommentModal value={tweet.id} />
+                              <EditTweetModal value={tweet.id} />
+                              {/* <FiEdit2 className="tweetbuttons" size="20px" id={tweet.id} onClick={handleEditClick} /> */}
+                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={handleDeleteClick} />
+                              {editTweet && <EditTweetsPage tweetId={tweet.id}/> }</div>
+                               </> ) :
+                                <>
+                                <div className="bottomicons">
+                                  <CreateCommentModal value={tweet.id} />
+                                  </div>
+                                  </>
+                              }
 
 
                 </div>

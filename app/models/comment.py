@@ -20,7 +20,7 @@ class Comment(db.Model):
         return {
             'id': self.id,
             'userIds': self.userId,
-            'postId': self.postId,
+            'tweetId': self.tweetId,
             'comment': self.comment,
             'poster': self.userIds.username,
             'commentersId' : self.userIds.id
