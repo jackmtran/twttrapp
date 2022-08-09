@@ -18,7 +18,7 @@
     text-align:center;
 }
 
-textarea{
+.taTweet{
     border:none;
     outline:none;
     background-color:black;
@@ -35,7 +35,7 @@ textarea{
     border-bottom:0.1px solid rgba(130, 130, 130, 0.565)
 }
 
-input{
+.taInput{
     background-color:rgba(95, 91, 91, 0.567);
     padding:6px;
     border-radius:10px;

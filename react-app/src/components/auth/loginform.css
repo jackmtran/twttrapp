@@ -1,0 +1,18 @@
+.loginform{
+    background-color:rgb(135, 135, 135);
+    display: block;
+
+}
+
+.inputsForLogin{
+    background-color:rgb(222, 205, 205);
+    padding:6px;
+    border-radius:10px;
+    margin-bottom:10px;
+    font-size:10px;
+    margin-right:10px;
+    color:white;
+    position:relative;
+    /* right:20.5%; */
+    padding-bottom:5px;
+}

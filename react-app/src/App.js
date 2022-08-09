@@ -13,7 +13,7 @@ import CreateTweetsPage from './components/createTweet'
 import EditTweetsPage from './components/editTweet'
 import CreateCommentsPage from './components/createComment';
 import EditCommentsPage from './components/editComment';
-import CommentsPage from './components/commentsPage'
+import Splash from './components/splash'
 
 
 
@@ -37,39 +37,36 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/tweets/create' exact={true}>
-          <CreateTweetsPage />
-        </Route>
-        <Route path='/tweets' exact={true}>
-          <TweetsPage />
-        </Route>
-        <Route path='/tweets/:id' exact={true}>
-          <EditTweetsPage />
-        </Route>
-        <Route path='/comments'>
-          <CommentsPage />
-        </Route>
-        <Route path='/comments/create/:id'>
-          <CreateCommentsPage />
-        </Route>
-        <Route path='/comments/:id'>
-          <EditCommentsPage />
-        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
+        </Route>
+        <Route path='/welcome' exact={true}>
+          <Splash />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/tweets/create' exact={true}>
+          <CreateTweetsPage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/tweets' exact={true}>
+          <TweetsPage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/tweets/:id' exact={true}>
+          <EditTweetsPage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/comments/create/:id'>
+          <CreateCommentsPage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/comments/:id'>
+          <EditCommentsPage />
+        </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <Route path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </Route>
       </Switch>
     </BrowserRouter>
   );

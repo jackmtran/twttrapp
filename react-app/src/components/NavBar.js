@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+import { useSelector} from "react-redux";
 import LogoutButton from './auth/LogoutButton';
 import { FaTwitter } from "react-icons/fa"
 import { RiHome7Fill } from "react-icons/ri"
@@ -9,15 +10,18 @@ import './NavBar.css'
 
 
 const NavBar = () => {
-
   const history = useHistory();
+
+
+  const user = useSelector((state) => state.session.user)
+
 
   const forHOME = (e) => {
     e.preventDefault();
     history.push('/tweets')
   }
 
-
+  if (user) {
   return (
     <nav>
       <div className="fix">
@@ -29,16 +33,6 @@ const NavBar = () => {
           <RiHome7Fill size="28px"className="homebutt" /><a>          Home</a>
           </NavLink>
         </li>
-        {/* <li className="underbird">
-          <NavLink to='/login' exact={true} className='active'>
-            Login
-          </NavLink>
-        </li>
-        <li className="underbird">
-          <NavLink to='/sign-up' exact={true} className='active'>
-            Sign Up
-          </NavLink>
-        </li> */}
         <li className="underbird">
           <NavLink to='/users' exact={true} className='active'>
           <AiOutlineUser size="28px"className="homebutt" /><a>            Profiles</a>
@@ -50,6 +44,10 @@ const NavBar = () => {
         </div>
     </nav>
   );
+  }
+  else {
+    return null;
+  }
 }
 
 export default NavBar;
