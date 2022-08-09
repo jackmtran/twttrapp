@@ -30,7 +30,7 @@ const TweetComments = ({tweetId}) => {
 
             let deletedComment = await dispatch(deleteCommentThunk(comment, buttonData))
                     if(deletedComment) {
-                    history.push('/tweets/')
+                    history.push('/tweets')
 
         }
       }
@@ -40,11 +40,6 @@ const handleClick = event => {
     setEditComment(current => !current);
   };
 
-    const handleEditComment = (e) => {
-        e.preventDefault();
-        const buttonData = Number(e.target.id);
-        history.push(`/comments/${buttonData}`)
-    }
 
     return (
         <>

@@ -13,9 +13,11 @@
   #modal-background {
     position:relative;
     border-radius:10px;
-    padding:40px;
-    width:30%;
-    background-color:#FFFF
+    padding:80px;
+    width:20%;
+    background-color:rgba(16, 16, 16, 0.913);
+    margin-right:none;
+
   }
 
   #modal-content {

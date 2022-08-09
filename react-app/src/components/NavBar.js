@@ -20,9 +20,9 @@ const NavBar = () => {
 
   return (
     <nav>
-      <div>
+      <div className="fix">
         <li>
-        <FaTwitter onClick={forHOME} size="29px" className="birdy"/>
+        <FaTwitter onClick={forHOME} size="28px" className="birdy"/>
         </li>
         <li className="underbird">
           <NavLink to='/tweets' exact={true} className='active'>

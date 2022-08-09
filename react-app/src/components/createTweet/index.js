@@ -64,7 +64,7 @@ function CreateTweetsPage() {
       {/* <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/> */}
       <textarea type="textarea" placeholder="What's happening?" value={content} onChange={updateContent}/>
       <input type="text" placeholder="Image Url" value={imageURL} onChange={updateUrl}/>
-      <button className="button" type="submit" onClick={handleSubmit}>tweet</button>
+      <button className="tweetsbutton" type="submit" onClick={handleSubmit}>tweet</button>
       {/* <button className="button" type="button" onClick={handleCancelClick}>Cancel</button> */}
     </form>
   );

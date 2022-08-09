@@ -2,6 +2,7 @@ import { createCommentThunk } from '../../store/comments'
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import './createComment.css'
 
 
 function CreateCommentsPage({value}) {
@@ -15,7 +16,9 @@ function CreateCommentsPage({value}) {
     const [errors, setErrors] = useState(errorsObj);
     const [userId] = useState(user.id);
     const [comment, setComment] = useState("");
-console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",value)
+
+// console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",value)
+
     const updateComment = (e) => setComment(e.target.value);
 
     const handleSubmit = async (e) => {

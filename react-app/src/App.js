@@ -13,6 +13,7 @@ import CreateTweetsPage from './components/createTweet'
 import EditTweetsPage from './components/editTweet'
 import CreateCommentsPage from './components/createComment';
 import EditCommentsPage from './components/editComment';
+import CommentsPage from './components/commentsPage'
 
 
 
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path='/tweets/:id' exact={true}>
           <EditTweetsPage />
+        </Route>
+        <Route path='/comments'>
+          <CommentsPage />
         </Route>
         <Route path='/comments/create/:id'>
           <CreateCommentsPage />
