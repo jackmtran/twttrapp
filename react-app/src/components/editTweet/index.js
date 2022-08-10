@@ -1,21 +1,21 @@
-import { updateTweetThunk } from '../../store/tweets'
+import { getTweetsThunk, updateTweetThunk } from '../../store/tweets'
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
 
 
-function EditTweetsPage({tweetId}) {
+function EditTweetsPage({tweet, setShowModal}) {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const {id} = useParams();
   const user = useSelector(state => state.session.user)
-  const tweet = useSelector(state => state.tweets)
-  const singleTweet= tweet[tweetId]
+  // const tweet = useSelector(state => state.tweets)
+  const tweetId = tweet.id
 
   const[userId] = useState(user.id);
-  // const [imageURL, setUrl] = useState(singleTweet.imageURL);
-  const [content, setContent] = useState(singleTweet.content);
+  const [imageURL, setUrl] = useState(tweet.imageURL);
+  const [content, setContent] = useState(tweet.content);
 
 
   // const updateUrl = (e) => setUrl(e.target.value)
@@ -26,12 +26,13 @@ function EditTweetsPage({tweetId}) {
 
     const updatedTweet = {
         userId,
-        // imageURL,
+        imageURL,
         content
       };
 
       dispatch(updateTweetThunk(updatedTweet, tweetId));
-    history.push("/tweets");
+      dispatch(getTweetsThunk())
+      setShowModal(false)
 
 };
 

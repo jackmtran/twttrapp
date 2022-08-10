@@ -33,6 +33,8 @@ function CreateTweetsPage() {
       errorsObj.content = "content must be longer than 5 characters and shorter than 20";
       error = true;
     }
+
+
     setErrors(errorsObj);
 
     if(!error) {

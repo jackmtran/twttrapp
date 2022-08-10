@@ -4,7 +4,7 @@ import EditTweetsPage from '../editTweet';
 import { FiEdit2 } from 'react-icons/fi'
 
 
-function EditTweetModal({value}) {
+function EditTweetModal({tweet}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ function EditTweetModal({value}) {
       <FiEdit2 className='commicon' size='20px' onClick={() => setShowModal(true)} />
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditTweetsPage value={value} setShowModal={setShowModal}/>
+          <EditTweetsPage tweet={tweet} setShowModal={setShowModal}/>
         </Modal>
       )}
     </>
