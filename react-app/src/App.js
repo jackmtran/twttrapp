@@ -40,7 +40,7 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
-        <Route path='/welcome' exact={true}>
+        <Route path='/' exact={true}>
           <Splash />
         </Route>
         <Route path='/sign-up' exact={true}>
