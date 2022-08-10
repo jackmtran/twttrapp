@@ -14,11 +14,11 @@ function EditTweetsPage({tweetId}) {
   const singleTweet= tweet[tweetId]
 
   const[userId] = useState(user.id);
-  const [imageURL, setUrl] = useState(singleTweet.imageURL);
+  // const [imageURL, setUrl] = useState(singleTweet.imageURL);
   const [content, setContent] = useState(singleTweet.content);
 
 
-  const updateUrl = (e) => setUrl(e.target.value)
+  // const updateUrl = (e) => setUrl(e.target.value)
   const updateContent = (e) => setContent(e.target.value);
 
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ function EditTweetsPage({tweetId}) {
 
     const updatedTweet = {
         userId,
-        imageURL,
+        // imageURL,
         content
       };
 
@@ -38,7 +38,7 @@ function EditTweetsPage({tweetId}) {
 
   return (
     <form>
-      <input type="text" placeholder="Image Url" value={imageURL} onChange={updateUrl}/>
+      {/* <input type="text" placeholder="Image Url" value={imageURL} onChange={updateUrl}/> */}
       <input type="text"  placeholder="Content" value={content} onChange={updateContent}/>
       <button type="submit"  onClick={handleSubmit}>Submit Edit</button>
     </form>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import './loginform.css'
+import { FaTwitter } from 'react-icons/fa'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -27,19 +29,20 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/tweets' />;
   }
 
   return (
-    <form onSubmit={onLogin}>
+
+    <form className="loginform" onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className="formback">
         <label htmlFor='email'>Email</label>
-        <input
+        <input className="inputsforLogin"
           name='email'
           type='text'
           placeholder='Email'
@@ -47,9 +50,10 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
+      <div className="formback">
         <label htmlFor='password'>Password</label>
         <input
+         className="inputsforLogin"
           name='password'
           type='password'
           placeholder='Password'

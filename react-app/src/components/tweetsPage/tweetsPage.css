@@ -42,20 +42,13 @@
     position:relative;
     top:-28px;
     margin-left:6px;
+
 }
 
 
 /* express project starter ending has modals guide! */
 
 
-.blackbar{
-    width:100px;
-    padding-left:10px;
-    font-size:12px;
-    justify-content: left;
-    align-items:left;
-    text-align:left;
-}
 
 .wholething{
     display: block;
@@ -93,7 +86,7 @@
     font-size:14px;
     width:500px;
     height:auto;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
 
 }
 
@@ -136,5 +129,6 @@
     width:400px;
     overflow-wrap: break-word;
     height:auto;
+    position:static;
 
 }
