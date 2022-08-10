@@ -1,18 +1,23 @@
 .loginform{
-    background-color:rgb(135, 135, 135);
+    background-color:rgba(16, 16, 16, 0.913);
     display: block;
 
 }
 
-.inputsForLogin{
-    background-color:rgb(222, 205, 205);
+.inputsforLogin{
+    background-color:rgba(16, 16, 16, 0.913);
     padding:6px;
-    border-radius:10px;
+    border-radius:5px;
     margin-bottom:10px;
     font-size:10px;
     margin-right:10px;
-    color:white;
+    color:rgb(114, 112, 112);
     position:relative;
     /* right:20.5%; */
     padding-bottom:5px;
+}
+
+.formback{
+    background-color:rgba(16, 16, 16, 0.913);
+
 }

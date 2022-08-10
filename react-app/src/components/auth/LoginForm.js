@@ -33,17 +33,14 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="wholeform">
-      <div> <FaTwitter className="frontbird" size="45px"/></div>
-      <h1 className="topwords">Happening now</h1>
-      <h2 className="join"> Join Twttr today.</h2>
+
     <form className="loginform" onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className="formback">
         <label htmlFor='email'>Email</label>
         <input className="inputsforLogin"
           name='email'
@@ -53,9 +50,10 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
+      <div className="formback">
         <label htmlFor='password'>Password</label>
         <input
+         className="inputsforLogin"
           name='password'
           type='password'
           placeholder='Password'
@@ -65,7 +63,6 @@ const LoginForm = () => {
         <button type='submit'>Login</button>
       </div>
     </form>
-    </div>
   );
 };
 
