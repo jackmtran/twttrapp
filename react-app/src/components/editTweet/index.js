@@ -56,7 +56,7 @@ function EditTweetsPage({tweet, setShowModal}) {
   return (
     <form>
       {errors.tweet && <div>{errors.tweet}</div>}
-      <input type="text" className="inputfirst" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
+      <textarea type="text" className="inputfirst" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
       <button type="submit"  onClick={handleSubmit}>Submit Edit</button>
     </form>
   );
