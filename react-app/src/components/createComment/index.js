@@ -35,6 +35,7 @@ function CreateCommentsPage({value, setShowModal}) {
       }
       setErrors(errorsObj);
 
+      if(!error){
       const newComment = {
           userId,
           tweetId:value,
@@ -47,6 +48,7 @@ function CreateCommentsPage({value, setShowModal}) {
 
       // setShowModal(false)
   };
+}
 
     const handleCancelClick = (e) => {
       e.preventDefault();
