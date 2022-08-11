@@ -54,8 +54,8 @@ const handleClick = event => {
                            <b className="commenter">{comment.poster}</b><a className="cmt">{comment.comment}</a>
                            {comment.commentersId === user.id ? (
                             <>
-                            <button id={comment.id} size="13px" className="firstcommentalters" onClick={handleClick}>Edit</button>
-                            <button id={comment.id} size="13px" className="commentalters" onClick={(e)=>handleDeleteComment(e)}>Delete</button>
+                            <button id={comment.id} size="10px" className="firstcommentalters" onClick={handleClick}>Edit</button>
+                            <button id={comment.id} size="10px" className="commentalters" onClick={(e)=>handleDeleteComment(e)}>Delete</button>
                             {editComment && <EditCommentsPage commentId={comment.id}/>}
                             </>
                            ) : null}

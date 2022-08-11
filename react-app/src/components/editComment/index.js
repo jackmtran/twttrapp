@@ -67,7 +67,6 @@ function EditCommentsPage({commentId}) {
       {/* <h1>Edit your COMMENT!</h1> */}
       {errors.comment && <div>{errors.comment}</div>}
       <input type="text" className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment}/>
-
       <button type="submit" className="editcombutt" onClick={handleSubmit}>Update Comment</button>
       {/* <button type="button" className="editcombutt" onClick={handleCancelClick}>Cancel</button> */}
     </form>
