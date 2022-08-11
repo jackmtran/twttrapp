@@ -6,10 +6,18 @@
 .commentform{
     background-color:rgba(16, 16, 16, 0.978);
     color:white;
+    border-bottom:0.5px solid rgba(121, 120, 120, 0.638);
+    border-top:0.5px solid rgba(121, 120, 120, 0.638);
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .inputfirst{
-    background-color:rgba(16, 16, 16, 0.978);
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color:rgba(79, 78, 78, 0.85);
     color:white;
+    border-radius:20px;
+    padding:7px;
 
 }

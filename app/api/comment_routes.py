@@ -34,7 +34,7 @@ def post_comment():
 def put_comment(id):
     comment = Comment.query.get(id)
     data = request.json
-    comment.content = data['content']
+    comment.comment = data['comment']
     db.session.commit()
     return comment.to_dict()
 

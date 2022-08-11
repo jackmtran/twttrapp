@@ -15,6 +15,7 @@ import CreateCommentsPage from './components/createComment';
 import EditCommentsPage from './components/editComment';
 import Splash from './components/splash'
 import Footer from "./components/footer";
+import TweetsComments from './components/populatecomments'
 
 
 

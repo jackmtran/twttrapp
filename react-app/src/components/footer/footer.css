@@ -10,14 +10,11 @@
   #footer-container{
     font-size: 10px;
     background-color:rgba(2, 2, 2, 0.568);
-    /* border-top:1px solid rgb(218, 218, 218); */
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     font-family:helvetica;
     align-items: center;
     justify-content:space-evenly;
-    margin-top:50px;
     color:white;
 
   }

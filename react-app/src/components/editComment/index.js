@@ -2,6 +2,7 @@ import { updateCommentThunk } from '../../store/comments'
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
+import "./editComm.css"
 
 
 function EditCommentsPage({commentId}) {
@@ -11,15 +12,14 @@ function EditCommentsPage({commentId}) {
   const { id } = useParams();
   const user = useSelector(state => state.session.user)
   const commentstuff = useSelector(state => state.comments)
-  const post = useSelector(state => state.posts)
+  const tweet = useSelector(state => state.tweets)
 
   const singleComment = commentstuff[commentId]
 
   let errorsObj = {comment: ''};
   const [errors, setErrors] = useState(errorsObj);
-
   const[userId] = useState(user.id);
-  const[postId] = useState(post.id)
+  const[tweetId] = useState(tweet.id)
 
   const [comment, setComment] = useState(singleComment.comment);
 
@@ -31,10 +31,10 @@ function EditCommentsPage({commentId}) {
     let error = false;
     errorsObj = {...errorsObj};
     if(comment === '') {
-      errorsObj.comment = "Requires input!";
+      errorsObj.comment = "has to be atleast 1 character!";
       error = true;
-    } else if (comment.length < 5 || comment.length > 20) {
-      errorsObj.comment = "comments must be longer than 5 characters and shorter than 20";
+    } else if (comment.length < 1 || comment.length > 15) {
+      errorsObj.comment = "comments must be under 15 characters" ;
       error = true;
     }
     setErrors(errorsObj);
@@ -42,14 +42,14 @@ function EditCommentsPage({commentId}) {
     if(!error) {
     const updatedComment = {
         userId,
-        postId,
+        tweetId,
         comment
       };
 
       dispatch(updateCommentThunk(updatedComment, commentId));
 
 
-    history.push("/posts/");
+    history.push("/tweets");
   }
 };
 
@@ -57,15 +57,16 @@ function EditCommentsPage({commentId}) {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    history.push("/comments/");
+    history.push("/comments");
   };
 
 
   return (
     <form>
       {/* <h1>Edit your COMMENT!</h1> */}
-      <input type="text" className='inputs' placeholder="Comment" value={comment} onChange={updateComment}/>
       {errors.comment && <div>{errors.comment}</div>}
+      <input type="text" className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment}/>
+
       <button type="submit" className="editcombutt" onClick={handleSubmit}>Update Comment</button>
       {/* <button type="button" className="editcombutt" onClick={handleCancelClick}>Cancel</button> */}
     </form>

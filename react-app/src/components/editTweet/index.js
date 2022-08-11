@@ -34,6 +34,7 @@ function EditTweetsPage({tweet, setShowModal}) {
       dispatch(updateTweetThunk(updatedTweet, tweetId));
       dispatch(getTweetsThunk())
       setShowModal(false)
+      e.preventDefault();
 
 };
 

@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import './createComment.css'
 import SingleTweet from '../singleTweet'
+import TweetComments from '../populatecomments'
 
 
 function CreateCommentsPage({value, setShowModal}) {
@@ -22,7 +23,15 @@ function CreateCommentsPage({value, setShowModal}) {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-
+      let error = false;
+      errorsObj = {...errorsObj};
+      if(comment === '') {
+        errorsObj.comment = "has to be at least 1 character!";
+        error = true;
+      } else if (comment.length < 1 || comment.length > 15) {
+        errorsObj.comment = "comments must be under 15 characters";
+        error = true;
+      }
       setErrors(errorsObj);
 
       const newComment = {
@@ -35,7 +44,7 @@ function CreateCommentsPage({value, setShowModal}) {
       await dispatch(createCommentThunk(newComment));
       history.push("/tweets");
 
-      setShowModal(false)
+      // setShowModal(false)
   };
 
     const handleCancelClick = (e) => {
@@ -53,6 +62,7 @@ function CreateCommentsPage({value, setShowModal}) {
         {errors.comment && <div>{errors.comment}</div>}
         <button type="submit" className="createbutton" onClick={(e)=>handleSubmit(e)}>Comment</button>
       </form>
+      <TweetComments value={value}/>
       </div>
     );
 

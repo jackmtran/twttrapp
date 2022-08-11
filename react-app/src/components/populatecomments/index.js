@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { thunkGetAllComments, deleteCommentThunk } from '../../store/comments'
 import { useHistory, NavLink } from "react-router-dom";
-import EditCommentsPage from '../editCommentsPage';
+import EditCommentsPage from '../editComment';
 import './tweetComment.css'
 
-const TweetComments = ({tweetId}) => {
+const TweetComments = ({value}) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -14,12 +14,12 @@ const TweetComments = ({tweetId}) => {
     const user = useSelector(state => state.session.user)
 
     const comments = useSelector(state => {
-        return Object.values(state.comments).filter(comment => comment.tweetId === tweetId);
+        return Object.values(state.comments).filter(comment => comment.tweetId === value);
     })
 
     useEffect(() => {
-        dispatch(thunkGetAllComments(tweetId))
-    }, [dispatch, tweetId])
+        dispatch(thunkGetAllComments(value))
+    }, [dispatch])
 
     const handleDeleteComment = async (e) => {
         e.preventDefault();
@@ -29,7 +29,7 @@ const TweetComments = ({tweetId}) => {
 
             let deletedComment = await dispatch(deleteCommentThunk(comment, buttonData))
                     if(deletedComment) {
-                    history.push('/tweets/')
+                    history.push('/tweets')
 
         }
       }
@@ -51,14 +51,12 @@ const handleClick = event => {
                 {comments.map((comment)=>{
                     return (
                         <div className="commenter">
-                           <NavLink className="comname" to={`/users/${comment.commentersId}`}><b>{comment.tweeter}</b></NavLink> {comment.content}
+                           <b className="commenter">{comment.poster}</b><a className="cmt">{comment.comment}</a>
                            {comment.commentersId === user.id ? (
                             <>
                             <button id={comment.id} size="13px" className="firstcommentalters" onClick={handleClick}>Edit</button>
                             <button id={comment.id} size="13px" className="commentalters" onClick={(e)=>handleDeleteComment(e)}>Delete</button>
-                            {editComment &&
-                            <EditCommentsPage commentId={comment.id}/>
-                }
+                            {editComment && <EditCommentsPage commentId={comment.id}/>}
                             </>
                            ) : null}
                         </div>
