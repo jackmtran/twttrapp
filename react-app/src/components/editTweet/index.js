@@ -14,6 +14,9 @@ function EditTweetsPage({tweet, setShowModal}) {
   // const tweet = useSelector(state => state.tweets)
   const tweetId = tweet.id
 
+
+  let errorsObj = {tweet: ''};
+  const [errors, setErrors] = useState(errorsObj);
   const[userId] = useState(user.id);
   const [imageURL, setUrl] = useState(tweet.imageURL);
   const [content, setContent] = useState(tweet.content);
@@ -25,6 +28,18 @@ function EditTweetsPage({tweet, setShowModal}) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    let error = false;
+    errorsObj = {...errorsObj};
+    if(content === '') {
+      errorsObj.content = "has to be atleast 1 character!";
+      error = true;
+    } else if (content.length < 1 || content.length > 15) {
+      errorsObj.content = "contents must be under 15 characters" ;
+      error = true;
+    }
+    setErrors(errorsObj);
+
+    if(!error) {
     const updatedTweet = {
         userId,
         imageURL,
@@ -34,15 +49,14 @@ function EditTweetsPage({tweet, setShowModal}) {
       dispatch(updateTweetThunk(updatedTweet, tweetId));
       dispatch(getTweetsThunk())
       setShowModal(false)
-      e.preventDefault();
 
 };
-
+}
 
   return (
     <form>
-      {/* <input type="text" placeholder="Image Url" value={imageURL} onChange={updateUrl}/> */}
-      <input type="text" className="inputfirst" placeholder="Content" value={content} onChange={updateContent}/>
+      {errors.tweet && <div>{errors.tweet}</div>}
+      <input type="text" className="inputfirst" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
       <button type="submit"  onClick={handleSubmit}>Submit Edit</button>
     </form>
   );

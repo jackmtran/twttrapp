@@ -50,6 +50,7 @@ function EditCommentsPage({commentId}) {
 
 
     history.push("/tweets");
+    e.preventDefault()
   }
 };
 
