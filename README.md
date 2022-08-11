@@ -31,7 +31,8 @@ Clone twttrapp into your desired directory:
 ![image](https://user<img width="1435" alt="Screen Shot 2022-08-11 at 11 00 49 AM" src="https://user-images.githubusercontent.com/99513086/184207641-5bd86034-f5d2-4285-bf8e-9bc60172a8ac.png">
 
 # Twttr Timeline
-<img width="1439" alt="Screen Shot 2022-08-11 at 11 04 11 AM" src="https://user-images.githubusercontent.com/99513086/184208392-20d2a06f-8980-49b8-91ee-63af34eac4c5.png">
+<img width="1438" alt="Screen Shot 2022-08-11 at 11 04 58 AM" src="https://user-images.githubusercontent.com/99513086/184208589-2cc00176-e4bf-4bf3-8172-749ddd03a42e.png">
+
 
 # Challenges
 * A challenge I ran into while building Twttr was the implementing of modals. Using values from other components in my project was difficult to understand at first but then things became routine, luckily. I'd like to say this was worth it to bring a smoother functionality to the site, rather than having to jump from page to page.
