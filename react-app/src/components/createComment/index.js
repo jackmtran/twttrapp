@@ -47,7 +47,7 @@ function CreateCommentsPage({value, setShowModal}) {
 
     return (
       <div>
-      <SingleTweet/>
+      <SingleTweet value={value}/>
       <form className="commentform" >
         <input type="text"  className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment}/>
         {errors.comment && <div>{errors.comment}</div>}

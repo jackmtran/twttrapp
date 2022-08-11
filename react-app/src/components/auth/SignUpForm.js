@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './signup.css'
 
-const SignUpForm = (setShowModal) => {
+const SignUpForm = ({setShowModal}) => {
 
   let errorsObj = {content: ''};
 
@@ -79,7 +79,7 @@ const SignUpForm = (setShowModal) => {
 
   if (user) {
     setShowModal(false)
-    return <Redirect to='/' />;
+    return <Redirect to='/tweets' />;
 
   }
 
@@ -95,7 +95,6 @@ const SignUpForm = (setShowModal) => {
       <div>
         <label>Username</label>
         <input
-
           type='text'
           name='username'
           className="inputssign"

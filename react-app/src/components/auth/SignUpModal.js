@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import SignUpForm from './SignUpForm.js';
 
 
-function SignUpModal({value}) {
+function SignUpModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ function SignUpModal({value}) {
       <button onClick={() => setShowModal(true)}>Sign up with an email</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <SignUpForm value={value} setShowModal={setShowModal}/>
+          <SignUpForm  setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

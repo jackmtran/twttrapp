@@ -4,15 +4,15 @@ import { getTweetsThunk} from "../../store/tweets"
 import './style.css'
 
 
-function SingleTweet() {
+function SingleTweet({value}) {
     const dispatch = useDispatch();
 
     const url = window.location.href.split('/');
-    const num = Number(url[url.length - 1]);
-
+    // const num = Number(url[url.length - 1]);
+    const tweetId = value
 
     const user = useSelector((state) => state.session.user)
-    const tweet  = useSelector((state) => Object.values(state.tweets).find((tweets) => tweets?.id === num))
+    const tweet  = useSelector((state) => Object.values(state.tweets).find((tweets) => tweets?.id === tweetId))
 
     useEffect(() => {
         dispatch(getTweetsThunk())
@@ -28,9 +28,9 @@ function SingleTweet() {
         return (
             <>
             <div>
-            <div>{tweet.user.profpic}</div>
-            <div>{tweet.user.username}</div>
-            <div>{tweet.content}</div>
+            <div className="styling"><img className="john" src={tweet.user.profpic}/></div>
+            <div className="styling">{tweet.user.username}</div>
+            <div className="styling">{tweet.content}</div>
             </div>
             </>
         )
