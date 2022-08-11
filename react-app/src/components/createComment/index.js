@@ -3,9 +3,10 @@ import { useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import './createComment.css'
+import SingleTweet from '../singleTweet'
 
 
-function CreateCommentsPage({value}) {
+function CreateCommentsPage({value, setShowModal}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -33,6 +34,8 @@ function CreateCommentsPage({value}) {
 
       await dispatch(createCommentThunk(newComment));
       history.push("/tweets");
+
+      setShowModal(false)
   };
 
     const handleCancelClick = (e) => {
@@ -43,11 +46,14 @@ function CreateCommentsPage({value}) {
 
 
     return (
+      <div>
+      <SingleTweet/>
       <form className="commentform" >
         <input type="text"  className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment}/>
         {errors.comment && <div>{errors.comment}</div>}
         <button type="submit" className="createbutton" onClick={(e)=>handleSubmit(e)}>Comment</button>
       </form>
+      </div>
     );
 
   }

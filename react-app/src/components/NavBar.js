@@ -33,11 +33,11 @@ const NavBar = () => {
           <RiHome7Fill size="28px"className="homebutt" /><a>          Home</a>
           </NavLink>
         </li>
-        <li className="underbird">
+        {/* <li className="underbird">
           <NavLink to='/users' exact={true} className='active'>
           <AiOutlineUser size="28px"className="homebutt" /><a>            Profiles</a>
           </NavLink>
-        </li>
+        </li> */}
         <li className="underbird">
         <LogoutButton/>
         </li>

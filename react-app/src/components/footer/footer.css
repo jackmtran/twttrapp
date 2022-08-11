@@ -1,0 +1,58 @@
+#github{
+    background-color:rgba(16, 16, 16, 0.978);
+    border-bottom:1px solid rgb(218, 218, 218);
+    text-decoration: underline;
+    font-size: 15px;
+    cursor:pointer;
+    color:white;
+  }
+
+  #footer-container{
+    font-size: 10px;
+    background-color:rgba(2, 2, 2, 0.568);
+    /* border-top:1px solid rgb(218, 218, 218); */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    font-family:helvetica;
+    align-items: center;
+    justify-content:space-evenly;
+    margin-top:50px;
+    color:white;
+
+  }
+
+  #footer{
+    font-family:helvetica;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    color:white;
+
+  }
+
+
+  .each{
+    padding:15px;
+    font-family:helvetica;
+    color:white;
+
+  }
+  .feet{
+    /* margin-right:10px; */
+    font-family:helvetica;
+    text-decoration:none;
+
+    padding:10px;
+    font-size:12px;
+    font-weight:lighter;
+    color:white;
+
+  }
+
+  .githubby{
+    margin-right:10px;
+    color:white;
+
+  }

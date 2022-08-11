@@ -2,6 +2,7 @@ import { getTweetsThunk, updateTweetThunk } from '../../store/tweets'
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
+import './editTwt.css'
 
 
 function EditTweetsPage({tweet, setShowModal}) {
@@ -40,7 +41,7 @@ function EditTweetsPage({tweet, setShowModal}) {
   return (
     <form>
       {/* <input type="text" placeholder="Image Url" value={imageURL} onChange={updateUrl}/> */}
-      <input type="text"  placeholder="Content" value={content} onChange={updateContent}/>
+      <input type="text" className="inputfirst" placeholder="Content" value={content} onChange={updateContent}/>
       <button type="submit"  onClick={handleSubmit}>Submit Edit</button>
     </form>
   );

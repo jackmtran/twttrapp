@@ -4,12 +4,12 @@
 
 }
 
-.inputsforLogin{
+.inputssign{
     background-color:rgba(16, 16, 16, 0.978);
     padding:6px;
-    border-radius:5px;
+    border:0.1px solid rgba(255, 255, 255, 0.464);
     margin-bottom:10px;
-    font-size:10px;
+    font-size:12px;
     margin-right:10px;
     color:rgb(255, 255, 255);
     position:relative;
@@ -20,4 +20,13 @@
 .formback{
     background-color:rgba(16, 16, 16, 0.978);
 
+}
+
+label{
+    color:white;
+    margin-right:5px;
+}
+
+.errors{
+    color:white
 }

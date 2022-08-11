@@ -4,17 +4,19 @@
     left:0;
     width:100%;
     height:100%;
-    background-color:rgba(16, 16, 16, 0.978);
+    background-color:rgba(16, 16, 16, 0.821);
     display:flex;
     justify-content:center;
     align-items:center;
+    z-index:1;
   }
 
   #modal-background {
     position:relative;
     border-radius:10px;
     padding:80px;
-    width:20%;
+    width:500px;
+    height:300px;
     background-color:rgba(16, 16, 16, 0.913);
     margin-right:none;
 
@@ -22,6 +24,8 @@
 
   #modal-content {
     position: absolute;
-    background-color:white;
-    border-radius: 24px;
+    background-color:rgba(16, 16, 16, 0.978);
+    /* border-radius: 24px; */
+    padding:20px;
+
   }

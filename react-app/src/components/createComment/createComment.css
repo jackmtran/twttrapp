@@ -4,5 +4,12 @@
 
 
 .commentform{
-    background-color:rgb(15, 15, 15)
+    background-color:rgba(16, 16, 16, 0.978);
+    color:white;
+}
+
+.inputfirst{
+    background-color:rgba(16, 16, 16, 0.978);
+    color:white;
+
 }

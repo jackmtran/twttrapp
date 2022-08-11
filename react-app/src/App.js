@@ -14,6 +14,7 @@ import EditTweetsPage from './components/editTweet'
 import CreateCommentsPage from './components/createComment';
 import EditCommentsPage from './components/editComment';
 import Splash from './components/splash'
+import Footer from "./components/footer";
 
 
 
@@ -34,6 +35,7 @@ function App() {
   }
 
   return (
+    <>
     <BrowserRouter>
       <NavBar />
       <Switch>
@@ -69,6 +71,8 @@ function App() {
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
+    <Footer/>
+    </>
   );
 }
 
