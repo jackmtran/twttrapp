@@ -47,7 +47,10 @@ const handleClick = event => {
                 {comments.map((comment)=>{
                     return (
                         <div className="commenter">
-                           <NavLink className="comname" to={`/users/${comment.commentersId}`}><b>{comment.poster}</b></NavLink> {comment.comment}
+                           {/* <NavLink className="comname" to={`/users/${comment.commentersId}`}> */}
+                            <b>{comment.poster}</b>
+                            {/* </NavLink> */}
+                            {comment.comment}
                         {comment.commentersId === user.id ? (
                             <>
                             <button id={comment.id} size="13px" className="firstcommentalters" onClick={handleClick}>Edit</button>

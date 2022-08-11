@@ -65,7 +65,9 @@ function TweetsPage() {
                 <div className="perTweet">
                           <div className="tweettopbar">
                             <div className="profile">
-                              <NavLink to={`/users/${tweet.user.id}`} ><img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/></NavLink>
+                              {/* <NavLink to={`/users/${tweet.user.id}`} > */}
+                                <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/>
+                                {/* </NavLink> */}
                             </div>
                             <div className="tweetinside">
                               {/* <NavLink className="name" to={`/users/${tweet.user.id}`}> */}
@@ -84,7 +86,7 @@ function TweetsPage() {
                               <CreateCommentModal value={tweet.id} />
                               <EditTweetModal tweet={tweet} />
                               {/* <FiEdit2 className="tweetbuttons" size="20px" id={tweet.id} onClick={handleEditClick} /> */}
-                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={(e) => handleDeleteClick(e) }/>
+                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={(e) => handleDeleteClick }/>
                               {editTweet && <EditTweetsPage tweetId={tweet.id}/> }</div>
                                </> ) :
                                 <>

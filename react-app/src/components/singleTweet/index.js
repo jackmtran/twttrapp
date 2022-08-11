@@ -29,8 +29,12 @@ function SingleTweet({value}) {
             <>
             <div>
             <div className="styling"><img className="john" src={tweet.user.profpic}/></div>
-            <div className="styling">{tweet.user.username}</div>
-            <div className="styling">{tweet.content}</div>
+            <div className="styling2">
+               <a className="singlename">{tweet.user.username}</a>
+                <div className="together">
+                   <a className="almost">{tweet.content}</a>
+                </div>
+                </div>
             </div>
             </>
         )

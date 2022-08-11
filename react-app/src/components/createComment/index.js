@@ -5,6 +5,7 @@ import { useState } from "react";
 import './createComment.css'
 import SingleTweet from '../singleTweet'
 import TweetComments from '../populatecomments'
+import { FaPlus } from 'react-icons/fa'
 
 
 function CreateCommentsPage({value, setShowModal}) {
@@ -60,7 +61,7 @@ function CreateCommentsPage({value, setShowModal}) {
       <form className="commentform" >
         <input type="text"  className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment} required={true}/>
         {errors.comment && <div>{errors.comment}</div>}
-        <button type="submit" className="createbutton" onClick={(e)=>handleSubmit(e)}>Comment</button>
+        <button type="submit" className="createbutton" onClick={(e)=>handleSubmit(e)}><FaPlus size="10px"className="iconss"/></button>
       </form>
       <TweetComments value={value}/>
       </div>

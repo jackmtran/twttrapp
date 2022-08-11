@@ -3,7 +3,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./editComm.css"
-
+import { ImLoop2 } from 'react-icons/im'
 
 function EditCommentsPage({commentId}) {
   const dispatch = useDispatch();
@@ -67,7 +67,7 @@ function EditCommentsPage({commentId}) {
       {/* <h1>Edit your COMMENT!</h1> */}
       {errors.comment && <div>{errors.comment}</div>}
       <input type="text" className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment}/>
-      <button type="submit" className="editcombutt" onClick={handleSubmit}>Update Comment</button>
+      <button type="submit" className="editcombutt" onClick={handleSubmit}><ImLoop2 className="iconss" size="11px"/></button>
       {/* <button type="button" className="editcombutt" onClick={handleCancelClick}>Cancel</button> */}
     </form>
   );

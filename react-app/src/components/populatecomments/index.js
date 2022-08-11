@@ -4,6 +4,8 @@ import { thunkGetAllComments, deleteCommentThunk } from '../../store/comments'
 import { useHistory, NavLink } from "react-router-dom";
 import EditCommentsPage from '../editComment';
 import './tweetComment.css'
+import { FiEdit2 } from 'react-icons/fi'
+import { HiOutlineTrash } from 'react-icons/hi'
 
 const TweetComments = ({value}) => {
     const dispatch = useDispatch();
@@ -54,8 +56,8 @@ const handleClick = event => {
                            <b className="commenter">{comment.poster}</b><a className="cmt">{comment.comment}</a>
                            {comment.commentersId === user.id ? (
                             <>
-                            <button id={comment.id} size="10px" className="firstcommentalters" onClick={handleClick}>Edit</button>
-                            <button id={comment.id} size="10px" className="commentalters" onClick={(e)=>handleDeleteComment(e)}>Delete</button>
+                            <button id={comment.id} size="10px" className="firstcommentalters" onClick={handleClick}><FiEdit2 size="11px"/></button>
+                            <button id={comment.id} size="10px" className="commentalters" onClick={(e)=>handleDeleteComment(e)}><HiOutlineTrash size="11px"/></button>
                             {editComment && <EditCommentsPage commentId={comment.id}/>}
                             </>
                            ) : null}
