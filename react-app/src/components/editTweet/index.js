@@ -33,8 +33,8 @@ function EditTweetsPage({tweet, setShowModal}) {
     if(content === '') {
       errorsObj.content = "has to be atleast 1 character!";
       error = true;
-    } else if (content.length < 1 || content.length > 15) {
-      errorsObj.content = "contents must be under 15 characters" ;
+    } else if (content.length < 1 || content.length > 144) {
+      errorsObj.content = "contents must be under 144 characters" ;
       error = true;
     }
     setErrors(errorsObj);
