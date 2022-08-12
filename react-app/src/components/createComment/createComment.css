@@ -1,11 +1,13 @@
 .createbutton{
     padding:none;
+    margin-bottom:3px;
 }
 
 
 .commentform{
     background-color:rgba(16, 16, 16, 0.978);
     color:white;
+    width:300px;
     border-bottom:0.5px solid rgba(121, 120, 120, 0.638);
     border-top:0.5px solid rgba(121, 120, 120, 0.638);
     margin-top:5px;
@@ -24,4 +26,11 @@
 
 .iconss{
     color:white;
+    /* margin-bottom:3px */
+}
+
+.errors{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    margin-top:5px;
 }

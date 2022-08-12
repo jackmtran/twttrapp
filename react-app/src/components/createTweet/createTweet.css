@@ -4,7 +4,7 @@
     width:518px;
     height: auto;
     margin-left:24.65%;
-    padding-top:20px;
+    padding-top:1px;
     /* border-radius: 10px; */
     text-align: center;
     border-bottom: 0.1px solid rgba(130, 130, 130, 0.565);
@@ -66,6 +66,7 @@
 
 .errors{
     color:white;
-    font-size:14px;
-    font-family:Arial, Helvetica, sans-serif
+    font-size:16px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold
 }

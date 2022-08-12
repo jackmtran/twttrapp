@@ -27,10 +27,10 @@ function CreateCommentsPage({value, setShowModal}) {
       let error = false;
       errorsObj = {...errorsObj};
       if(comment === '') {
-        errorsObj.comment = "has to be at least 1 character!";
+        errorsObj.comment = "Comment has to be at least 1 character!";
         error = true;
       } else if (comment.length < 1 || comment.length > 15) {
-        errorsObj.comment = "comments must be under 15 characters";
+        errorsObj.comment = "Comments must be under 15 characters";
         error = true;
       }
       setErrors(errorsObj);
@@ -61,8 +61,9 @@ function CreateCommentsPage({value, setShowModal}) {
       <div>
       <SingleTweet value={value}/>
       <form className="commentform" >
+             {errors.comment && <div className="errors">{errors.comment}</div>}
         <input type="text"  className='inputfirst' placeholder="Comment" value={comment} onChange={updateComment} required={true}/>
-        {errors.comment && <div>{errors.comment}</div>}
+
         <button type="submit" className="createbutton" onClick={(e)=>handleSubmit(e)}><FaPlus size="10px"className="iconss"/></button>
       </form>
       <TweetComments value={value}/>
