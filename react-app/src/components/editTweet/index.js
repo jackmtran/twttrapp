@@ -64,7 +64,7 @@ function EditTweetsPage({tweet, setShowModal}) {
       </a>
       )}
       </div>
-      <textarea type="text" className="inputfirst" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
+      <textarea type="text" className="inputting" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
       <button className="move" type="submit"  onClick={(e) => handleSubmit(e)}><FaTwitter className="birdyagain"size="11px"/></button>
     </form>
   );

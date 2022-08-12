@@ -24,16 +24,18 @@ const SignUpForm = ({setShowModal}) => {
     let error = false;
     errorsObj = {...errorsObj};
     if(username === '') {
-      errorsObj.username = "Requires username!";
+      errorsObj.username = "Requires a username!";
       error = true;
-    } else if (username.length < 4 || username.length > 20) {
-      errorsObj.username = "Usernames must be longer than 4 characters and shorter than 20.";
+    } else if (username.length < 3 || username.length > 10) {
+      errorsObj.username = "Usernames must be 4 - 10 character.";
       error = true;
     }
     if(email === '') {
       errorsObj.email = "Requires email!";
       error = true;
     } else if (!email.includes("@")) {
+      errorsObj.email = "Please input a valid email address."
+    } else if (!email.includes(".")) {
       errorsObj.email = "Please input a valid email address."
     }
     if(password === '') {
@@ -85,7 +87,9 @@ const SignUpForm = ({setShowModal}) => {
 
   return (
     <form onSubmit={onSignUp}>
-            {Object.values(reactErrors).map((error, idx) => <p key={idx}>{error}</p>)}
+      <div className="errors">
+          {Object.values(reactErrors).map((error, idx) => <p key={idx}>{error}</p>)}
+      </div>
       <div className="errors">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
@@ -137,7 +141,7 @@ const SignUpForm = ({setShowModal}) => {
           required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <button className="getin" type='submit'>Sign Up</button>
     </form>
   );
 };

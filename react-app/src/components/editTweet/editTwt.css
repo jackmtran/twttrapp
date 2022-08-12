@@ -1,12 +1,17 @@
-.inputfirst{
-    background-color:rgba(16, 16, 16, 0.978);
-    color:white;
+.inputting{
+    background-color:rgba(79, 78, 78, 0.85);    color:white;
     margin-right:5px;
     font-family:Arial, Helvetica, sans-serif;
     height:40px;
     width:200px;
     resize:none;
     position:relative;
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color:rgba(79, 78, 78, 0.85);
+    color:white;
+    border-radius:20px;
+    padding:7px;
 }
 
 .errors{
