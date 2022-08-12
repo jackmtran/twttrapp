@@ -6,6 +6,11 @@ import './loginform.css'
 import { FaTwitter } from 'react-icons/fa'
 
 const LoginForm = () => {
+
+
+  let errorsObj = {content:''}
+  const [reactErrors, setReactErrors] = useState(errorsObj);
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,9 +19,29 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
+
+    let error = false;
+    errorsObj = {...errorsObj};
+
+    if(email === '') {
+      errorsObj.email = "Requires email!";
+      error = true;
+    } else if (!email.includes("@") || !email.includes(".")) {
+      errorsObj.email = "Please input a valid email address.";
+      error = true;
+    }
+    if(password === '') {
+      errorsObj.password = "Requires password!";
+      error = true;
+    }
+
+    setReactErrors(errorsObj);
+
+    if(!error) {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
+    }
     }
   };
 
@@ -43,8 +68,10 @@ const LoginForm = () => {
   }
 
   return (
-
     <form className="loginform" onSubmit={onLogin}>
+      <div className="errors">
+        {Object.values(reactErrors).map((error, idx) => <a key={idx}>{error}</a>)}
+      </div>
       <div className="errors">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
