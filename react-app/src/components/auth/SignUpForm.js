@@ -53,6 +53,7 @@ const SignUpForm = ({setShowModal}) => {
 
 
     if(!error) {
+      console.log(password, "sadfasdf")
       if (password === repeatPassword) {
         const data = await dispatch(signUp(username, email, password));
         if (data) {
