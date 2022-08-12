@@ -26,8 +26,8 @@ const SignUpForm = ({setShowModal}) => {
     if(username === '') {
       errorsObj.username = "Requires username!";
       error = true;
-    } else if (username.length < 5 || username.length > 20) {
-      errorsObj.username = "Usernames must be longer than 5 characters and shorter than 20.";
+    } else if (username.length < 4 || username.length > 20) {
+      errorsObj.username = "Usernames must be longer than 4 characters and shorter than 20.";
       error = true;
     }
     if(email === '') {
@@ -93,7 +93,7 @@ const SignUpForm = ({setShowModal}) => {
       </div>
 
       <div>
-        <label>Username</label>
+        <label>* Username</label>
         <input
           type='text'
           name='username'
@@ -104,7 +104,7 @@ const SignUpForm = ({setShowModal}) => {
       </div>
 
       <div>
-        <label>Email</label>
+        <label>* Email</label>
         <input
           type='text'
           name='email'
@@ -115,7 +115,7 @@ const SignUpForm = ({setShowModal}) => {
       </div>
 
       <div>
-        <label>Password</label>
+        <label>* Password</label>
         <input
           type='password'
           name='password'
@@ -127,7 +127,7 @@ const SignUpForm = ({setShowModal}) => {
       </div>
 
       <div>
-        <label>Repeat Password</label>
+        <label>* Repeat Password</label>
         <input
           type='password'
           name='repeat_password'

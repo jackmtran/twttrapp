@@ -39,7 +39,7 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/tweets' />;
+    return <Redirect to='/tweets'/>;
   }
 
   return (
@@ -51,7 +51,7 @@ const LoginForm = () => {
         ))}
       </div>
       <div className="formback">
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email'>* Email</label>
         <input className="inputsforLogin"
           name='email'
           type='text'
@@ -61,7 +61,7 @@ const LoginForm = () => {
         />
       </div>
       <div className="formback">
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'>* Password</label>
         <input
          className="inputsforLogin"
           name='password'

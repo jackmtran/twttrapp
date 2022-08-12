@@ -15,7 +15,7 @@ function EditTweetsPage({tweet, setShowModal}) {
   const tweetId = tweet.id
 
 
-  let errorsObj = {tweet: ''};
+  let errorsObj = {content:""};
   const [errors, setErrors] = useState(errorsObj);
   const[userId] = useState(user.id);
   const [imageURL, setUrl] = useState(tweet.imageURL);
@@ -55,7 +55,13 @@ function EditTweetsPage({tweet, setShowModal}) {
 
   return (
     <form>
-      {errors.tweet && <div>{errors.tweet}</div>}
+      <div className="errors">
+      {Object.values(errors).map((error, idx) =>
+      <a key={idx}>
+        {error}
+      </a>
+      )}
+      </div>
       <textarea type="text" className="inputfirst" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
       <button type="submit"  onClick={(e) => handleSubmit(e)}>Submit Edit</button>
     </form>
