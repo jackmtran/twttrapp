@@ -45,7 +45,7 @@ function CreateCommentsPage({value, setShowModal}) {
 
       await dispatch(createCommentThunk(newComment));
       history.push("/tweets");
-
+      setComment("")
       // setShowModal(false)
   };
 }

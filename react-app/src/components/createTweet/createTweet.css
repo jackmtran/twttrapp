@@ -26,7 +26,7 @@
     font-family:Arial, Helvetica, sans-serif;
     font-size:19.5px;
     color:white;
-    padding-top:54px;
+    padding-top:35px;
     position:relative;
     bottom:20px;
     left:30px;
@@ -62,4 +62,10 @@
     border-radius:50%;
     right:48.5%;
     top:80px
+}
+
+.errors{
+    color:white;
+    font-size:14px;
+    font-family:Arial, Helvetica, sans-serif
 }

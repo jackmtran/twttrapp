@@ -27,10 +27,10 @@ function CreateTweetsPage() {
     let error = false;
     errorsObj = {...errorsObj};
     if(content === '') {
-      errorsObj.content = "Requires input!";
+      errorsObj.content = "Requires tweet!!!";
       error = true;
     } else if (content.length < 1 || content.length > 144) {
-      errorsObj.content = "content must be longer than 5 characters and shorter than 20";
+      errorsObj.content = "content must be longer than 1 characters and shorter than 144";
       error = true;
     }
 
@@ -62,7 +62,7 @@ function CreateTweetsPage() {
   return (
     <form className="tweet-form">
       <h2 className="tweetword"></h2>
-      {Object.values(errors).map((error, idx) => <div key={idx}>{error}</div>)}
+      {Object.values(errors).map((error, idx) => <div className="errors"key={idx}>{error}</div>)}
       <img className="picpic" src="https://i.imgur.com/UXPTR6x.png"/>
       {/* <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/> */}
       <textarea className="taTweet" type="textarea" placeholder="What's happening?" value={content} onChange={updateContent}/>
