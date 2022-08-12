@@ -3,6 +3,8 @@ import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
 import './editTwt.css'
+import { FaTwitter } from "react-icons/fa"
+
 
 
 function EditTweetsPage({tweet, setShowModal}) {
@@ -31,10 +33,10 @@ function EditTweetsPage({tweet, setShowModal}) {
     let error = false;
     errorsObj = {...errorsObj};
     if(content === '') {
-      errorsObj.content = "has to be atleast 1 character!";
+      errorsObj.content = "Content has to be at least 1 character!";
       error = true;
     } else if (content.length < 1 || content.length > 144) {
-      errorsObj.content = "contents must be under 144 characters" ;
+      errorsObj.content = "Contents must be under 144 characters" ;
       error = true;
     }
     setErrors(errorsObj);
@@ -63,7 +65,7 @@ function EditTweetsPage({tweet, setShowModal}) {
       )}
       </div>
       <textarea type="text" className="inputfirst" placeholder="Content" value={content} onChange={(e) => updateContent(e)}/>
-      <button type="submit"  onClick={(e) => handleSubmit(e)}>Submit Edit</button>
+      <button className="move" type="submit"  onClick={(e) => handleSubmit(e)}><FaTwitter className="birdyagain"size="11px"/></button>
     </form>
   );
 
