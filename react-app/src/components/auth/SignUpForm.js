@@ -33,10 +33,9 @@ const SignUpForm = ({setShowModal}) => {
     if(email === '') {
       errorsObj.email = "Requires email!";
       error = true;
-    } else if (!email.includes("@")) {
-      errorsObj.email = "Please input a valid email address."
-    } else if (!email.includes(".")) {
-      errorsObj.email = "Please input a valid email address."
+    } else if (!email.includes("@") || !email.includes(".")) {
+      errorsObj.email = "Please input a valid email address.";
+      error = true;
     }
     if(password === '') {
       errorsObj.password = "Requires password!";
