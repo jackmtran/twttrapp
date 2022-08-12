@@ -63,6 +63,7 @@ function CreateTweetsPage() {
     <form className="tweet-form">
       <h2 className="tweetword"></h2>
       {Object.values(errors).map((error, idx) => <div key={idx}>{error}</div>)}
+      <img className="picpic" src="https://i.imgur.com/UXPTR6x.png"/>
       {/* <img alt="profilepic" src={tweet.user.profpic} width="25px" height="25px" className="profpic"/> */}
       <textarea className="taTweet" type="textarea" placeholder="What's happening?" value={content} onChange={updateContent}/>
       {/* <input className="taInput" type="text" placeholder="Image Url" value={imageURL} onChange={updateUrl}/> */}
