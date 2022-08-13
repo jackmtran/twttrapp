@@ -85,7 +85,7 @@ function TweetsPage() {
                                     <div className="bottomicons">
                               <CreateCommentModal value={tweet.id} />
                               <EditTweetModal tweet={tweet} />
-                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={(e) => handleDeleteClick }/>
+                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={(e) => handleDeleteClick(e) }/>
                               {editTweet && <EditTweetsPage tweetId={tweet.id}/> }</div>
                                </> ) :
                                 <>
