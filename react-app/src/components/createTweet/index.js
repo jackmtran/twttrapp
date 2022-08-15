@@ -29,8 +29,8 @@ function CreateTweetsPage() {
     if(content === '') {
       errorsObj.content = "Requires tweet!!!";
       error = true;
-    } else if (content.length > 144) {
-      errorsObj.content = "Content must be shorter than 144 characters";
+    } else if (content.length > 111) {
+      errorsObj.content = "Content must be shorter than 111 characters";
       error = true;
     }
 
