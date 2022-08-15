@@ -82,10 +82,10 @@ function TweetsPage() {
                           </div>
                               {tweet.user.id === user.id ? (
                                     <>
-                                    <div className="bottomicons">
+                                    <div className="bottomicons" key={tweet.id}>
                               <CreateCommentModal value={tweet.id} />
                               <EditTweetModal tweet={tweet} />
-                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={(e) => handleDeleteClick(e)}/>
+                              <HiOutlineTrash className="tweetbuttons" size="20px" id={tweet.id} onClick={(e) => handleDeleteClick(e)}></HiOutlineTrash>
                               {editTweet && <EditTweetsPage tweetId={tweet.id}/> }</div>
                                </> ) :
                                 <>
