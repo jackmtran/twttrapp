@@ -31,7 +31,7 @@ function EditCommentsPage({commentId}) {
     let error = false;
     errorsObj = {...errorsObj};
     if(comment === '') {
-      errorsObj.comment = "has to be atleast 1 character!";
+      errorsObj.comment = "comment has to be at least 1 character!";
       error = true;
     } else if (comment.length < 1 || comment.length > 15) {
       errorsObj.comment = "comments must be under 15 characters" ;
