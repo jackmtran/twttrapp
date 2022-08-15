@@ -56,10 +56,10 @@ function EditCommentsPage({commentId}) {
 
 
 
-  const handleCancelClick = (e) => {
-    e.preventDefault();
-    history.push("/comments");
-  };
+  // const handleCancelClick = (e) => {
+  //   e.preventDefault();
+  //   history.push("/comments");
+  // };
 
 
   return (
