@@ -28,7 +28,7 @@ Clone twttrapp into your desired directory:
 [WIREFRAMES](https://github.com/jackmtran/twttrapp/wiki/WIREFRAMES)
 
 # Login / SignUp Page
-![image](https://user<img width="1435" alt="Screen Shot 2022-08-11 at 11 00 49 AM" src="https://user-images.githubusercontent.com/99513086/184207641-5bd86034-f5d2-4285-bf8e-9bc60172a8ac.png">
+<img width="1435" alt="Screen Shot 2022-08-11 at 11 00 49 AM" src="https://user-images.githubusercontent.com/99513086/184207641-5bd86034-f5d2-4285-bf8e-9bc60172a8ac.png">
 
 # Twttr Timeline
 <img width="1438" alt="Screen Shot 2022-08-11 at 11 04 58 AM" src="https://user-images.githubusercontent.com/99513086/184208589-2cc00176-e4bf-4bf3-8172-749ddd03a42e.png">
