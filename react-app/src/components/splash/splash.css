@@ -11,9 +11,9 @@
     color:rgba(255, 255, 255, 0.951);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size:69px;
-    text-align:center;
+    /* text-align:center; */
     position:relative;
-    right:2%;
+    left:7%;
     top:45px;
 }
 
