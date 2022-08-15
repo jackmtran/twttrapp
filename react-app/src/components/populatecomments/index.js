@@ -23,13 +23,13 @@ const TweetComments = ({value}) => {
         dispatch(thunkGetAllComments(value))
     }, [dispatch])
 
-    const handleDeleteComment = async (e) => {
+    const handleDeleteComment = (e) => {
         e.preventDefault();
         const buttonData = Number(e.target.id);
         for (const comment of comments) {
           if (comment.id === buttonData) {
 
-            let deletedComment = await dispatch(deleteCommentThunk(comment, buttonData))
+            let deletedComment = dispatch(deleteCommentThunk(comment, buttonData))
                     if(deletedComment) {
                     history.push('/tweets')
 
@@ -56,8 +56,12 @@ const handleClick = event => {
                            <b className="commenter">{comment.poster}</b><a className="cmt">{comment.comment}</a>
                            {comment.commentersId === user.id ? (
                             <>
-                            <button id={comment.id} size="10px" className="firstcommentalters" onClick={handleClick}><FiEdit2 size="11px"/></button>
-                            <button id={comment.id} size="10px" className="commentalters" onClick={(e)=>handleDeleteComment(e)}><HiOutlineTrash size="11px"/></button>
+                            <button id={comment.id} size="10px" className="firstcommentalters" onClick={handleClick}>
+                                {/* <FiEdit2  id={comment.id}  size="11px" onClick={handleClick}/> */} Edit
+                            </button>
+                            <button id={comment.id} size="10px" className="commentalters" onClick={(e) => handleDeleteComment(e)}>
+                                {/* <HiOutlineTrash id={comment.id}  size="11px" onClick={(e) => handleDeleteComment(e)}/> */}Delete
+                            </button>
                             {editComment && <EditCommentsPage commentId={comment.id}/>}
                             </>
                            ) : null}
